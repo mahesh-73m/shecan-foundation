@@ -6,7 +6,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
-const contactRoutes = require('./routes/contacts');
+// const contactRoutes = require('./routes/contacts');
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/contacts', contactRoutes);
+// app.use('/api/contacts', contactRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
