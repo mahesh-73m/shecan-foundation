@@ -15,7 +15,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['https://your-render-service.onrender.com', 'http://localhost:3000'],
   credentials: true
 }));
 app.use(express.json());
