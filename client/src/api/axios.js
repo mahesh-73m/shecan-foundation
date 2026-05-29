@@ -1,18 +1,7 @@
 import axios from 'axios';
 
-axios.post(
-  `${process.env.REACT_APP_API_URL}/api/contacts`,
-  formData
-).then(response => {
-  setIsSuccess(true);
-  setFormData({ name: '', email: '', message: '' });
-}).catch(error => {
-  console.error('Error submitting contact form:', error);
-  setIsSuccess(false);
-});
-
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: 'http://localhost:5000/api',
   withCredentials: true
 });
 
