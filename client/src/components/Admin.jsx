@@ -5,7 +5,7 @@ import { AuthContext } from '../context/AuthContext';
 import './Admin.css';
 
 const Admin = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
