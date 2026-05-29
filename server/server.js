@@ -6,16 +6,19 @@ require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
-// const contactRoutes = require('./routes/contacts');
+const contactRoutes = require('./routes/contacts');
 
 const app = express();
 
 // Connect to database
 connectDB();
 
-// Middleware
+// CORS - Add your Vercel frontend URL
 app.use(cors({
-  origin: ['https://your-render-service.onrender.com', 'http://localhost:3000'],
+  origin: [
+    'http://localhost:3000',
+    'https://shecan-foundation-mahesh.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json());
@@ -23,12 +26,20 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', authRoutes);
-// app.use('/api/contacts', contactRoutes);
+app.use('/api/contacts', contactRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
+
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 // Error handling middleware
 app.use((err, req, res, next) => {
