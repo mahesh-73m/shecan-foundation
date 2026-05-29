@@ -1,9 +1,9 @@
 {
   "name": "shecan-foundation",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
