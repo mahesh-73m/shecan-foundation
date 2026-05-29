@@ -180,7 +180,7 @@ const Register = () => {
                 }}
               />
               <label htmlFor="terms">
-                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>
               </label>
             </div>
             <span className="form-error">{errors.terms}</span>
