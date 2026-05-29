@@ -1,0 +1,250 @@
+/* Register Page */
+.register-page {
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+  background: #f8f9fd;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Register Card */
+.register-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+}
+
+/* Register Header */
+.register-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.register-header .logo {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.register-header h1 {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.register-header p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+/* Register Form */
+.register-form {
+  padding: 35px 30px;
+}
+
+/* Form Group */
+.register-form .form-group {
+  margin-bottom: 20px;
+}
+
+.register-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.register-form .form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.register-form .form-group input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.register-form .form-group input::placeholder {
+  color: #9ca3af;
+}
+
+/* Password Wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+/* Error State */
+.register-form .form-group.error input {
+  border-color: #ef4444;
+}
+
+.register-form .form-error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 6px;
+  display: none;
+}
+
+.register-form .form-group.error .form-error {
+  display: block;
+}
+
+/* Submit Button */
+.register-form .submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.register-form .submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4);
+}
+
+.register-form .submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.register-form .submit-btn .spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error Alert */
+.register-form .error-alert {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Divider */
+.register-form .divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.register-form .divider::before,
+.register-form .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.register-form .divider span {
+  padding: 0 15px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* Login Link */
+.register-form .login-link {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.register-form .login-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-form .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Terms */
+.register-form .terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.register-form .terms input {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.register-form .terms label {
+  color: #6b7280;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.register-form .terms label a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.register-form .terms label a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-header {
+    padding: 30px 20px;
+  }
+
+  .register-header h1 {
+    font-size: 22px;
+  }
+
+  .register-form {
+    padding: 25px 20px;
+  }
+}
